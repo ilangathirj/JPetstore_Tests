@@ -3,7 +3,7 @@ package page.objects;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import waits.WaitForElement;
+//import waits.WaitForElement;
 
 public class TopMenuPage extends BasePage {
 
@@ -42,42 +42,42 @@ public class TopMenuPage extends BasePage {
 
     @Step("Getting is store logo is displayed")
     public boolean isStoreLogoDisplayed() {
-        WaitForElement.waitUntilElementIsVisible(storeLogo);
+     //   WaitForElement.waitUntilElementIsVisible(storeLogo);
         log().info("Returned boolean value-dependent if store logo is displayed");
         return storeLogo.isDisplayed();
     }
 
     @Step("Click on store logo")
     public void clickOnStoreLogo(){
-        WaitForElement.waitUntilElementIsClickable(storeLogo);
+    //    WaitForElement.waitUntilElementIsClickable(storeLogo);
         storeLogo.click();
         log().info("Clicked on store logo");
     }
 
     @Step("Click on cart image")
     public void clickOnCartImage(){
-        WaitForElement.waitUntilElementIsClickable(cartImage);
+     //   WaitForElement.waitUntilElementIsClickable(cartImage);
         cartImage.click();
         log().info("Clicked on cart image");
     }
 
     @Step("Click on sign-in link")
     public void clickOnSignInLink(){
-        WaitForElement.waitUntilElementIsClickable(signInLink);
+      //  WaitForElement.waitUntilElementIsClickable(signInLink);
         signInLink.click();
         log().info("Clicked on sign-in link");
     }
 
     @Step("Click on help link")
     public void clickOnHelpLink(){
-        WaitForElement.waitUntilElementIsClickable(helpLink);
+      //  WaitForElement.waitUntilElementIsClickable(helpLink);
         helpLink.click();
         log().info("Clicked on help link");
     }
 
     @Step("Fill search field")
     public TopMenuPage fillSearch(String search){
-        WaitForElement.waitUntilElementIsClickable(searchField);
+    //    WaitForElement.waitUntilElementIsClickable(searchField);
         searchField.sendKeys(search);
         log().info("Filled search field");
         return this;
@@ -85,7 +85,7 @@ public class TopMenuPage extends BasePage {
 
     @Step("Click on search button")
     public SearchPage clickOnSearchButton(){
-        WaitForElement.waitUntilElementIsClickable(searchButton);
+     //   WaitForElement.waitUntilElementIsClickable(searchButton);
         searchButton.click();
         log().info("Clicked on search button");
         return new SearchPage();
@@ -93,7 +93,7 @@ public class TopMenuPage extends BasePage {
 
     @Step("Click on fish link")
     public AnimalPage clickOnFishLink(){
-        WaitForElement.waitUntilElementIsClickable(fishLink);
+     //   WaitForElement.waitUntilElementIsClickable(fishLink);
         fishLink.click();
         log().info("Clicked on fish link");
         return new AnimalPage();
@@ -101,7 +101,7 @@ public class TopMenuPage extends BasePage {
 
     @Step("Click on dogs link")
     public AnimalPage clickOnDogsLink(){
-        WaitForElement.waitUntilElementIsClickable(dogsLink);
+    //    WaitForElement.waitUntilElementIsClickable(dogsLink);
         dogsLink.click();
         log().info("Clicked on dogs link");
         return new AnimalPage();
@@ -109,7 +109,7 @@ public class TopMenuPage extends BasePage {
 
     @Step("Click on reptiles link")
     public AnimalPage clickOnReptilesLink(){
-        WaitForElement.waitUntilElementIsClickable(reptilesLink);
+     //   WaitForElement.waitUntilElementIsClickable(reptilesLink);
         reptilesLink.click();
         log().info("Clicked on reptiles link");
         return new AnimalPage();
@@ -117,7 +117,7 @@ public class TopMenuPage extends BasePage {
 
     @Step("Click on cats link")
     public AnimalPage clickOnCatsLink(){
-        WaitForElement.waitUntilElementIsClickable(catsLink);
+     //   WaitForElement.waitUntilElementIsClickable(catsLink);
         catsLink.click();
         log().info("Clicked on cats link");
         return new AnimalPage();
@@ -125,7 +125,7 @@ public class TopMenuPage extends BasePage {
 
     @Step("Click on birds link")
     public AnimalPage clickOnBirdsLink(){
-        WaitForElement.waitUntilElementIsClickable(birdsLink);
+     //   WaitForElement.waitUntilElementIsClickable(birdsLink);
         birdsLink.click();
         log().info("Clicked on birds link");
         return new AnimalPage();

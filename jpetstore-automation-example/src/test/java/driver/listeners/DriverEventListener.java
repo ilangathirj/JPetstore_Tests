@@ -10,6 +10,7 @@ import org.openqa.selenium.support.events.WebDriverEventListener;
 
 import java.util.Arrays;
 
+@SuppressWarnings("deprecation")
 public class DriverEventListener implements WebDriverEventListener {
     private static Logger logger = LogManager.getLogger(DriverEventListener.class);
 

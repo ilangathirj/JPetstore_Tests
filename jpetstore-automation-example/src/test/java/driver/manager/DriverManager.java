@@ -18,7 +18,7 @@ public class DriverManager {
     public static WebDriver getWebDriver() {
 
         if (driver == null) {
-            driver = new BrowserFactory(getBrowserToRun(), getIsRemoteRun()).getBrowser();
+            driver = new BrowserFactory(getBrowserToRun(), getIsRemoteRun()).getBrowser();           
             driver = WebDriverEventListenerRegistrar.registerWebDriverEventListener(driver);
         }
 

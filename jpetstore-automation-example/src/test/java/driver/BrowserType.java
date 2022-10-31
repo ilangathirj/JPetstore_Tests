@@ -7,9 +7,6 @@ public enum BrowserType {
     IE("internetexplorer"),
     OPERA("opera");
 
-    private final String browser;
-
     BrowserType(String browser) {
-        this.browser = browser;
     }
 }

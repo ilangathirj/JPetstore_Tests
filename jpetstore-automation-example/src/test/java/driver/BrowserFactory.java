@@ -1,7 +1,8 @@
 package driver;
 
-import configuration.LocalWebDriverProperties;
-import configuration.TestRunProperties;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -9,12 +10,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerOptions;
-import org.openqa.selenium.opera.OperaOptions;
+//import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import java.net.MalformedURLException;
-import java.net.URL;
+import configuration.LocalWebDriverProperties;
+import configuration.TestRunProperties;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BrowserFactory {
 
@@ -43,10 +45,11 @@ public class BrowserFactory {
                     FirefoxOptions firefoxOptions = new FirefoxOptions();
                     desiredCapabilities.merge(firefoxOptions);
                     return getRemoteWebDriver(desiredCapabilities);
-                case OPERA:
+          /*      case OPERA:
                     OperaOptions operaOptions = new OperaOptions();
                     desiredCapabilities.merge(operaOptions);
                     return getRemoteWebDriver(desiredCapabilities);
+            */ 
                 case IE:
                     InternetExplorerOptions internetExplorerOptions = new InternetExplorerOptions();
                     desiredCapabilities.merge(internetExplorerOptions);
@@ -58,8 +61,16 @@ public class BrowserFactory {
 
             switch (browserType) {
                 case CHROME:
-                    System.setProperty("webdriver.chrome.driver", LocalWebDriverProperties.getChromeWebDriverLocation());
-                    return new ChromeDriver();
+                	
+                	ChromeOptions chromeOptions = new ChromeOptions();
+        			WebDriverManager.chromedriver().setup();
+        		        		
+        			return new ChromeDriver(chromeOptions);
+                	
+                	
+                //    System.setProperty("webdriver.chrome.driver", LocalWebDriverProperties.getChromeWebDriverLocation());
+               //     return new ChromeDriver();                        
+                                      
                 case FIREFOX:
                     System.setProperty("webdriver.gecko.driver", LocalWebDriverProperties.getFirefoxWebDriverLocation());
                     return new FirefoxDriver();
@@ -85,3 +96,5 @@ public class BrowserFactory {
         return remoteWebDriver;
     }
 }
+
+

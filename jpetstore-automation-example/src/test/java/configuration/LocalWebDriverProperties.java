@@ -1,3 +1,4 @@
+
 package configuration;
 
 public class LocalWebDriverProperties {
@@ -14,3 +15,4 @@ public class LocalWebDriverProperties {
         return ConfigurationProperties.getProperties().getProperty("ie.driver.location");
     }
 }
+
